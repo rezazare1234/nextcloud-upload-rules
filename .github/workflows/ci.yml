@@ -13,10 +13,12 @@ jobs:
       - uses: actions/checkout@v4.4.0
         with:
           persist-credentials: false
-      - name: Install test runtimes
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y php-cli php-mbstring nodejs python3
+      - name: Set up PHP
+        uses: shivammathur/setup-php@2.40.0
+        with:
+          php-version: '8.3'
+          extensions: mbstring
+          coverage: none
       - name: Validate and test
         run: python3 tools/check.py
       - name: Build installable archives
