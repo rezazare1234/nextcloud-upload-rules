@@ -1,0 +1,14 @@
+﻿const assert=require('node:assert/strict');
+require('../js/policy.js');
+const engine=globalThis.UploadSizeNoticePolicy;
+const rule={extensions:['mp4','mkv'],blocked:false,maxMiB:1,message:'custom {filename} {limit} {extension}'};
+const p={schemaVersion:3,enabled:true,rules:[rule,{extensions:['*'],blocked:false,maxMiB:300,message:'default'}]};
+assert.equal(engine.violation(p,'a.MP4',1048576),null);
+assert.deepEqual(engine.violation(p,'a.MP4',1048577),{status:413,message:'custom a.MP4 1 mp4'});
+assert.equal(engine.ruleFor(p,'a.pdf').maxMiB,300);
+assert.equal(engine.ruleFor({...p,rules:[]},'a.mp4'),null);
+assert.equal(engine.violation({...p,rules:[]},'a.mp4',999999999),null);
+assert.equal(engine.violation({...p,enabled:false},'a.mp4',999999999),null);
+assert.equal(engine.violation({...p,rules:[{...rule,blocked:true,maxMiB:0}]},'a.mkv',0).status,403);
+assert.equal(engine.violation(p,'folder/a.mkv',1048577).message,'custom a.mkv 1 mkv');
+console.log('8 browser policy assertions passed');

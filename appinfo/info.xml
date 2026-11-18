@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <id>upload_size_notice</id>
+  <name>Upload Rules — قوانین آپلود</name>
+  <summary>Manage upload sizes, filename extensions and Persian notices</summary>
+  <description>Administrator-managed upload rules with browser preflight and WebDAV enforcement. Ordered rules support filename extensions, size limits, custom messages, user and group targeting, and per-rule user exclusions. Supports Nextcloud 34.</description>
+  <version>3.0.0</version>
+  <licence>agpl</licence>
+  <author>rezazare1234</author>
+  <namespace>UploadSizeNotice</namespace>
+  <category>files</category>
+  <website>https://github.com/rezazare1234/nextcloud-upload-rules</website>
+  <bugs>https://github.com/rezazare1234/nextcloud-upload-rules/issues</bugs>
+  <repository type="git">https://github.com/rezazare1234/nextcloud-upload-rules.git</repository>
+  <dependencies><php min-version="8.2"/><nextcloud min-version="34" max-version="34"/></dependencies>
+  <settings>
+    <admin>OCA\UploadSizeNotice\Settings\Admin</admin>
+    <admin-section>OCA\UploadSizeNotice\Settings\Section</admin-section>
+  </settings>
+</info>

@@ -1,0 +1,22 @@
+#upload-rules-admin{max-width:1100px;box-sizing:border-box;padding:32px!important;text-align:right}
+#upload-rules-admin .ur-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+#upload-rules-admin h2{margin:0 0 8px;font-size:23px}#upload-rules-admin h3{margin:0;font-size:18px}
+#upload-rules-admin .ur-master{display:flex;align-items:center;gap:10px;margin:18px 0}
+#upload-rules-admin .ur-guide{padding:16px;border-radius:10px;background:var(--color-primary-element-light);line-height:1.9}
+#upload-rules-admin .ur-note,#upload-rules-admin small{color:var(--color-text-maxcontrast);line-height:1.8;font-size:13px}
+#upload-rules-admin .ur-card{border:1px solid var(--color-border-dark);border-radius:12px;padding:20px;margin:16px 0;background:var(--color-main-background)}
+#upload-rules-admin .ur-card.off{opacity:.65}#upload-rules-admin .ur-card p{margin:10px 0;overflow-wrap:anywhere}
+#upload-rules-admin .ur-card-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+#upload-rules-admin .ur-badge{display:inline-block;padding:3px 12px;border-radius:20px;background:var(--color-primary-element-light);font-size:13px;margin-left:8px}
+#upload-rules-admin dialog{position:fixed;inset:0;margin:auto;width:min(760px,94vw);max-height:90vh;overflow:auto;box-sizing:border-box;border:1px solid var(--color-border-dark);border-radius:16px;background:var(--color-main-background);color:var(--color-main-text);padding:26px;box-shadow:0 15px 70px #0005}
+#upload-rules-admin dialog:not([open]){display:none}#upload-rules-admin dialog::backdrop{background:#0007}
+#upload-rules-admin .ur-field{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;font-weight:600}
+#upload-rules-admin .ur-field input,#upload-rules-admin .ur-field textarea,#upload-rules-admin .ur-field select{width:100%;box-sizing:border-box;margin:0;font-weight:400}
+#upload-rules-admin .ur-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}#upload-rules-admin [hidden]{display:none!important}
+#upload-rules-admin .ur-picker{border:1px solid var(--color-border-dark);border-radius:10px;padding:12px;margin-bottom:18px;min-width:0}
+#upload-rules-admin .ur-picker>label{display:block;font-weight:600;margin-bottom:8px}#upload-rules-admin .ur-picker input{width:100%;box-sizing:border-box;margin:8px 0}
+#upload-rules-admin .ur-results{max-height:160px;overflow:auto}#upload-rules-admin .ur-results button{display:block;width:100%;text-align:right;white-space:normal;height:auto;min-height:36px;margin:2px 0;overflow-wrap:anywhere}
+#upload-rules-admin .ur-chips{display:flex;gap:5px;flex-wrap:wrap}#upload-rules-admin .ur-chips button{font-size:12px;height:auto;white-space:normal;overflow-wrap:anywhere}
+#upload-rules-admin .ur-dialog-actions{display:flex;gap:10px;margin-top:18px}
+#upload-rules-admin #ur-status,#upload-rules-admin #ur-editor-status{min-height:24px;line-height:1.8}#upload-rules-admin [data-kind=error]{color:var(--color-error)}#upload-rules-admin [data-kind=success]{color:var(--color-success)}
+@media(max-width:650px){#upload-rules-admin{padding:16px!important}#upload-rules-admin .ur-grid{grid-template-columns:1fr}#upload-rules-admin dialog{padding:18px}}

@@ -1,0 +1,23 @@
+name: Validate app
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4.4.0
+        with:
+          persist-credentials: false
+      - name: Install test runtimes
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y php-cli php-mbstring nodejs python3
+      - name: Validate and test
+        run: python3 tools/check.py
+      - name: Build installable archives
+        run: python3 tools/build.py
